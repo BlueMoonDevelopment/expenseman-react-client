@@ -1,0 +1,31 @@
+/* Cookie Consent https://www.osano.com/cookieconsent/documentation/about-cookie-consent/ */
+.hero {
+    position: relative;
+    z-index: 1;
+}
+
+.box {
+    opacity: 0.6;
+}
+
+.cc-compliance a {
+    color: white !important;
+}
+
+/* Funktionsklassen */
+.is-centered {
+    text-align: center !important;
+}
+
+.not-center {
+    text-align: initial !important;
+}
+
+.background {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
+}

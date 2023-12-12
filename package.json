@@ -20,8 +20,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "css-build": "node-sass --omit-source-map-url sass/mystyles.scss public/css/mystyles.css",
+    "css-watch": "npm run css-build -- --watch"
   },
+  "proxy": "http://localhost:3001",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -39,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "node-sass": "^7.0.3"
   }
 }
