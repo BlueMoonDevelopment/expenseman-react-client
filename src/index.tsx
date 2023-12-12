@@ -5,7 +5,6 @@ import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import NoPage from "./pages/NoPage";
 import Imprint from "./pages/Imprint";
-import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 export default function App() {
