@@ -16,10 +16,10 @@ export default function Navbar() {
                                 <p>Imprint</p>
                             </a>
                             <a className="navbar-item" href="https://github.com/BlueMoonDevelopment"
-                               target="_blank">
+                               target="_blank" rel="noreferrer">
                                 <p>GitHub</p>
                             </a>
-                            <a className="navbar-item" href="https://bluemoondev.org/discord" target="_blank">
+                            <a className="navbar-item" href="https://bluemoondev.org/discord" target="_blank" rel="noreferrer">
                                 <p>Discord</p>
                             </a>
                         </div>

@@ -10,12 +10,12 @@ export default function Footer() {
                     </div>
                     <div className="level-right">
                         <div className="columns">
-                            <div className="column"><a href="https://github.com/BlueMoonDevelopment" target="_blank">
+                            <div className="column"><a href="https://github.com/BlueMoonDevelopment" target="_blank" rel="noreferrer">
                                 <button className="button is-link is-rounded"><span className="icon"><i
                                     className="fab fa-github"></i></span><span>BlueMoonDevelopment</span></button>
                             </a></div>
                             <div className="column"><a href="https://github.com/BlueMoonDevelopment/expenseman-web"
-                                                       target="_blank">
+                                                       target="_blank" rel="noreferrer">
                                 <button className="button is-link is-rounded"><span className="icon"><i
                                     className="fab fa-github"></i></span><span>Source Code</span></button>
                             </a></div>

@@ -13,8 +13,7 @@ export default function Imprint() {
             <h2>Contact Information</h2>
             <p>Telephone: +4915125281498 </p>
             <br/>
-            <p>E-Mail: <a href="mailto:joey.peter1998@gmail.com"></a></p>
-            <p><a href="mailto:joey.peter1998@gmail.com">joey.peter1998@gmail.com</a></p>
+            <p>E-Mail:<a href="mailto:joey.peter1998@gmail.com">joey.peter1998@gmail.com</a></p>
             <br/>
             <h2>Disclaimer </h2>
             <p>Accountability for content </p>
@@ -46,7 +45,7 @@ export default function Imprint() {
                 copyright laws.</p>
             <br/>
             <br/>
-            <i>Source: <a href="http://www.translate-24h.de" target="_blank"><p>Deutsch-Englisch Übersetzungen </p></a>
+            <i>Source: <a href="http://www.translate-24h.de" target="_blank" rel="noreferrer"><p>Deutsch-Englisch Übersetzungen </p></a>
             </i>
             <br/>
             <br/>
