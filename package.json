@@ -3,30 +3,33 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-oauth/google": "^0.12.1",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.68",
-    "@types/react": "^18.2.43",
+    "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.17",
+    "axios": "^1.6.2",
     "bulma": "^0.9.4",
+    "cross-env": "^7.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.1",
     "react-scripts": "5.0.1",
-    "typescript": "^4.9.5",
+    "typescript": "^5.3.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cross-env PORT=8082 react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "cross-env PORT=8082 react-scripts test",
     "eject": "react-scripts eject",
     "css-build": "node-sass --omit-source-map-url sass/mystyles.scss public/css/mystyles.css",
     "css-watch": "npm run css-build -- --watch"
   },
-  "proxy": "http://localhost:3001",
+  "proxy": "http://localhost:8083",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -46,6 +49,6 @@
     ]
   },
   "devDependencies": {
-    "node-sass": "^7.0.3"
+    "node-sass": "^9.0.0"
   }
 }

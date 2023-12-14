@@ -1,6 +1,23 @@
 import React from 'react';
+import axios from "axios";
+import {useGoogleLogin} from "@react-oauth/google";
+import {getUrl} from "./tools/Tools";
 
 export default function Navbar() {
+
+    const googleLogin = useGoogleLogin({
+        onSuccess: async ({code}) => {
+            const tokens = await axios.post(getUrl('/auth/google'), {
+                code,
+            });
+            console.log(tokens);
+        },
+        onError: () => {
+            console.log("Login failed");
+        },
+        flow: 'auth-code',
+        ux_mode: 'popup',
+    });
     return (
         <div className="hero-head">
             <nav className="navbar is-primary">
@@ -19,16 +36,17 @@ export default function Navbar() {
                                target="_blank" rel="noreferrer">
                                 <p>GitHub</p>
                             </a>
-                            <a className="navbar-item" href="https://bluemoondev.org/discord" target="_blank" rel="noreferrer">
+                            <a className="navbar-item" href="https://bluemoondev.org/discord" target="_blank"
+                               rel="noreferrer">
                                 <p>Discord</p>
                             </a>
                         </div>
                     </div>
                     <div className="navbar-end">
                         <div className="buttons">
-                            <a className="navbar-item button is-primary is-light" href="/auth">
-                                <p>Sign in/up</p>
-                            </a>
+                            <button onClick={() => googleLogin()}
+                                    className="navbar-item button is-primary is-light">Sign in/up
+                            </button>
                         </div>
                     </div>
                 </div>
