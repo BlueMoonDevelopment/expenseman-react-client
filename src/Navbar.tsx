@@ -1,23 +1,9 @@
 import React from 'react';
-import axios from "axios";
-import {useGoogleLogin} from "@react-oauth/google";
 import {getUrl} from "./tools/Tools";
+import {API_ENDPOINT_URL, GOOGLE_OAUTH_CLIENT_ID} from "./configuration";
 
 export default function Navbar() {
 
-    const googleLogin = useGoogleLogin({
-        onSuccess: async ({code}) => {
-            const tokens = await axios.post(getUrl('/auth/google'), {
-                code,
-            });
-            console.log(tokens);
-        },
-        onError: () => {
-            console.log("Login failed");
-        },
-        flow: 'auth-code',
-        ux_mode: 'popup',
-    });
     return (
         <div className="hero-head">
             <nav className="navbar is-primary">
@@ -44,9 +30,26 @@ export default function Navbar() {
                     </div>
                     <div className="navbar-end">
                         <div className="buttons">
-                            <button onClick={() => googleLogin()}
-                                    className="navbar-item button is-primary is-light">Sign in/up
-                            </button>
+                            <div id="g_id_onload"
+                                 data-client_id={GOOGLE_OAUTH_CLIENT_ID}
+                                 data-context="signin"
+                                 data-ux_mode="popup"
+                                 data-login_uri={API_ENDPOINT_URL + "/auth/google"}
+                                 data-auto_select="true"
+                                 data-itp_support="true"
+                            >
+                            </div>
+
+                            <div className="g_id_signin navbar-item"
+                                 id="my-signin2"
+                                 data-type="standard"
+                                 data-shape="pill"
+                                 data-theme="outline"
+                                 data-text="signin_with"
+                                 data-size="large"
+                                 data-logo_alignment="left"
+                            >
+                            </div>
                         </div>
                     </div>
                 </div>
