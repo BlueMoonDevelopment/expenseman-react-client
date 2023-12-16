@@ -1,4 +1,4 @@
-[![Node.js CI](https://github.com/BlueMoonDevelopment/ExpenseMan-web/actions/workflows/node.js.yml/badge.svg?branch=main)](https://github.com/BlueMoonDevelopment/ExpenseMan-web/actions/workflows/node.js.yml) ![Expensemanapp](https://cronitor.io/badges/DKXIei/production/QInGYTUwemwAcsXVREMF7N17HC4.svg)
+[![Node.js CI](https://github.com/BlueMoonDevelopment/expenseman-react-client/actions/workflows/npm.yml/badge.svg)](https://github.com/BlueMoonDevelopment/expenseman-react-client/actions/workflows/npm.yml) ![Expensemanapp](https://cronitor.io/badges/DKXIei/production/QInGYTUwemwAcsXVREMF7N17HC4.svg)
 
 # Status
 
