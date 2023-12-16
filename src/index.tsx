@@ -18,15 +18,15 @@ const router = createBrowserRouter([
                 element: <Home/>
             },
             {
-                path: '/imprint',
+                path: 'imprint',
                 element: <Imprint/>
             },
             {
-                path: '/auth/success',
+                path: 'auth/success',
                 element: <Successful/>,
             },
             {
-                path: '/auth/failed',
+                path: 'auth/failed',
                 element: <Failed/>,
             },
             {
