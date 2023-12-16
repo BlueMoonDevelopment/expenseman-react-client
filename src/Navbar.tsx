@@ -1,7 +1,5 @@
-
 import React from 'react';
-import {getUrl} from "./tools/Tools";
-import {API_ENDPOINT_URL, GOOGLE_OAUTH_CLIENT_ID} from "./configuration";
+import {API_ENDPOINT_URL, DEVELOPMENT_MODE, GOOGLE_OAUTH_CLIENT_ID} from "./configuration";
 
 export default function Navbar() {
 
@@ -35,7 +33,7 @@ export default function Navbar() {
                                  data-client_id={GOOGLE_OAUTH_CLIENT_ID}
                                  data-context="signin"
                                  data-ux_mode="popup"
-                                 data-login_uri={API_ENDPOINT_URL + "/auth/google"}
+                                 data-login_uri={(DEVELOPMENT_MODE ? "http://localhost:8082" : API_ENDPOINT_URL) + "/auth/google"}
                                  data-auto_select="true"
                                  data-itp_support="true"
                             >
