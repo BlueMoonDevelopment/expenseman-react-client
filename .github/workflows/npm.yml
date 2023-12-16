@@ -20,6 +20,7 @@ jobs:
         with:
           node-version: latest
           cache: 'npm'
+      - run: npm install
       - run: npm run css-build
       - run: npm run build
   
