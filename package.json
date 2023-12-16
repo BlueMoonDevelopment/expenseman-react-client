@@ -4,10 +4,6 @@
   "private": true,
   "proxy": "http://localhost:8083",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
     "@types/node": "^16.18.68",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.17",
@@ -17,8 +13,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.1",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "cross-env PORT=8082 HOST=127.0.0.1 react-scripts start",
@@ -31,8 +26,7 @@
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ]
   },
   "browserslist": {
