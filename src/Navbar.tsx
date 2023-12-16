@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {getUrl} from "./tools/Tools";
 import {API_ENDPOINT_URL, GOOGLE_OAUTH_CLIENT_ID} from "./configuration";
@@ -40,8 +41,7 @@ export default function Navbar() {
                             >
                             </div>
 
-                            <div className="g_id_signin navbar-item"
-                                 id="my-signin2"
+                            <div className="g_id_signin"
                                  data-type="standard"
                                  data-shape="pill"
                                  data-theme="outline"
