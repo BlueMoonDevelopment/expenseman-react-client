@@ -5,6 +5,8 @@ import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import NoPage from "./pages/NoPage";
 import Imprint from "./pages/Imprint";
+import Successful from "./pages/auth/successful";
+import Failed from "./pages/auth/failed";
 
 const router = createBrowserRouter([
     {
@@ -18,6 +20,14 @@ const router = createBrowserRouter([
             {
                 path: '/imprint',
                 element: <Imprint/>
+            },
+            {
+                path: '/auth/success',
+                element: <Successful/>,
+            },
+            {
+                path: '/auth/failed',
+                element: <Failed/>,
             },
             {
                 path: '*',
