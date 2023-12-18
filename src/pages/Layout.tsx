@@ -3,11 +3,11 @@ import {Outlet} from 'react-router-dom';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 
-const Layout = () => {
+const Layout = (props: { signedIn: boolean }) => {
     return (
         <>
             <section className="hero is-fullheight">
-                <Navbar/>
+                <Navbar signedIn={props.signedIn}/>
                 <div className="hero-body">
                     <Outlet/>
                 </div>

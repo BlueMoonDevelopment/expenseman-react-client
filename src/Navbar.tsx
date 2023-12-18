@@ -1,7 +1,17 @@
-import React from 'react';
-import {API_ENDPOINT_URL, DEVELOPMENT_MODE, GOOGLE_OAUTH_CLIENT_ID} from "./configuration";
+import React, {useEffect} from 'react';
+import SigninButton from "./SigninButton";
 
-export default function Navbar() {
+export default function Navbar(props: { signedIn: boolean }) {
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.src="/js/navbar.js";
+        script.async = true;
+        document.body.appendChild(script);
+        return () => {
+            document.body.removeChild(script);
+        }
+    })
+
 
     return (
         <div className="hero-head">
@@ -29,29 +39,12 @@ export default function Navbar() {
                     </div>
                     <div className="navbar-end">
                         <div className="buttons">
-                            <div id="g_id_onload"
-                                 data-client_id={GOOGLE_OAUTH_CLIENT_ID}
-                                 data-context="signin"
-                                 data-ux_mode="popup"
-                                 data-login_uri={(DEVELOPMENT_MODE ? "http://localhost:8082" : API_ENDPOINT_URL) + "/auth/google"}
-                                 data-auto_select="true"
-                                 data-itp_support="true"
-                            >
-                            </div>
-
-                            <div className="g_id_signin"
-                                 data-type="standard"
-                                 data-shape="pill"
-                                 data-theme="outline"
-                                 data-text="signin_with"
-                                 data-size="large"
-                                 data-logo_alignment="left"
-                            >
-                            </div>
+                            <SigninButton signedIn={props.signedIn}/>
                         </div>
                     </div>
                 </div>
             </nav>
         </div>
-    );
+    )
+        ;
 }
