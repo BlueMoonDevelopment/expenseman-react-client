@@ -1,7 +1,19 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import SigninButton from "./SigninButton";
 
 export default function Navbar(props: { signedIn: boolean }) {
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.src="/js/navbar.js";
+        script.async = true;
+        document.body.appendChild(script);
+
+        return () => {
+            document.body.removeChild(script);
+        }
+    })
+
+
     return (
         <div className="hero-head">
             <nav className="navbar is-primary">

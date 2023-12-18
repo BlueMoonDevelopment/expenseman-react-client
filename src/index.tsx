@@ -9,7 +9,6 @@ import Successful from "./pages/auth/successful";
 import Failed from "./pages/auth/failed";
 import axios from "axios";
 import {getUrl} from "./tools/Tools";
-import Scripts from './Scripts';
 
 function getRouter(signedIn: boolean) {
     return createBrowserRouter([
