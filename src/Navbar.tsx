@@ -1,16 +1,7 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import SigninButton from "./SigninButton";
 
-export default function Navbar() {
-    useEffect(() => {
-        const navbarScript = document.createElement('script');
-        navbarScript.src = '/js/navbar.js';
-        navbarScript.async = true;
-        document.body.appendChild(navbarScript);
-        return () => {
-            document.body.removeChild(navbarScript);
-        }
-    }, []);
+export default function Navbar(props: { signedIn: boolean }) {
     return (
         <div className="hero-head">
             <nav className="navbar is-primary">
@@ -37,7 +28,7 @@ export default function Navbar() {
                     </div>
                     <div className="navbar-end">
                         <div className="buttons">
-                            <SigninButton/>
+                            <SigninButton signedIn={props.signedIn}/>
                         </div>
                     </div>
                 </div>
