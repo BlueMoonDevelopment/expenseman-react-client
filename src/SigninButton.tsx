@@ -8,7 +8,7 @@ export default function SigninButton(props: { signedIn: boolean }) {
             script.src = "https://accounts.google.com/gsi/client";
             script.async = true;
             document.body.appendChild(script);
-
+            console.log('User not signed in, rendering JS script...')
             return () => {
                 document.body.removeChild(script);
             }
