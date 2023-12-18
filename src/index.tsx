@@ -46,10 +46,6 @@ const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 
-const scripts = ReactDOM.createRoot(
-    document.getElementById('scripts') as HTMLElement
-)
-
 axios.get(getUrl('/auth/checksignedin'), {
     withCredentials: true,
     validateStatus: function (status) {
@@ -59,9 +55,6 @@ axios.get(getUrl('/auth/checksignedin'), {
     root.render(
         <RouterProvider router={getRouter(res.status === 200)}/>
     );
-    scripts.render(
-        <Scripts/>
-    )
 });
 
 
