@@ -1,5 +1,9 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
+import axios from "axios";
 import {API_ENDPOINT_URL, DEVELOPMENT_MODE, GOOGLE_OAUTH_CLIENT_ID} from "./configuration";
+import {getUrl} from "./tools/Tools";
+import {ToastContainer, toast, ToastItem} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function SigninButton(props: { signedIn: boolean }) {
     useEffect(() => {
@@ -8,13 +12,35 @@ export default function SigninButton(props: { signedIn: boolean }) {
             script.src = "https://accounts.google.com/gsi/client";
             script.async = true;
             document.body.appendChild(script);
-            console.log('User not signed in, rendering JS script...')
             return () => {
                 document.body.removeChild(script);
             }
         }
 
     })
+
+    function handleClick() {
+        axios.get(getUrl('/auth/signout'), {
+            withCredentials: true,
+            validateStatus: function (status) {
+                return status < 500;
+            }
+        }).then(res => {
+            if (res.status === 200) {
+                toast.success("You have been signed out!", {
+                    position: toast.POSITION.TOP_CENTER
+                });
+            } else if (res.status === 401) {
+                toast.warning("You are already signed out!", {
+                    position: toast.POSITION.TOP_CENTER
+                })
+            } else {
+                toast.error("Error! Please try reloading the page...", {
+                    position: toast.POSITION.TOP_CENTER
+                })
+            }
+        });
+    }
 
     if (!props.signedIn) {
         console.log('User not signed in, rendering buttons...');
@@ -42,6 +68,11 @@ export default function SigninButton(props: { signedIn: boolean }) {
         );
     } else {
         console.log('User signed in, not rendering buttons...');
-        return <></>
     }
+    return (
+        <>
+            <button className="button is-info is-light is-normal" onClick={handleClick}>Sign out</button>
+            <ToastContainer/>
+        </>
+    )
 }
