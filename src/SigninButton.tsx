@@ -6,7 +6,7 @@ import axios from "axios";
 export default class SigninButton extends React.Component {
 
     state = {
-        signedIn: false
+        hideButton: true
     }
 
     componentDidMount() {
@@ -17,12 +17,12 @@ export default class SigninButton extends React.Component {
             }
         }).then(res => {
             const status = res.status;
-            this.setState({signedIn: status === 200});
+            this.setState({hideButton: status !== 200});
         })
     }
 
     render() {
-        if (!this.state.signedIn) {
+        if (!this.state.hideButton) {
             return (
                 <>
                     <div id="g_id_onload"
