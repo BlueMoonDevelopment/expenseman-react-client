@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Home() {
+export default function Scripts() {
     return (
         <>
             <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
