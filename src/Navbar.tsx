@@ -7,7 +7,7 @@ export default function Navbar(props: { signedIn: boolean }) {
         script.src="/js/navbar.js";
         script.async = true;
         document.body.appendChild(script);
-
+        console.log('script appended');
         return () => {
             document.body.removeChild(script);
         }
