@@ -15,6 +15,7 @@ export default class SigninButton extends React.Component {
             const status = res.status;
             console.log('status: ' + status);
             if (status !== 200) {
+                console.log('Rendering sign-in button')
                 return (
                     <>
                         <div id="g_id_onload"
@@ -38,6 +39,7 @@ export default class SigninButton extends React.Component {
                     </>
                 );
             } else {
+                console.log('NOT rendering sign-in button')
                 return (
                     <></>
                 )
