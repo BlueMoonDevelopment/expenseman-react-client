@@ -14,7 +14,7 @@ export default function Footer() {
                                 <button className="button is-link is-rounded"><span className="icon"><i
                                     className="fab fa-github"></i></span><span>BlueMoonDevelopment</span></button>
                             </a></div>
-                            <div className="column"><a href="https://github.com/BlueMoonDevelopment/expenseman-web"
+                            <div className="column"><a href="https://github.com/BlueMoonDevelopment/expenseman-react-client"
                                                        target="_blank" rel="noreferrer">
                                 <button className="button is-link is-rounded"><span className="icon"><i
                                     className="fab fa-github"></i></span><span>Source Code</span></button>

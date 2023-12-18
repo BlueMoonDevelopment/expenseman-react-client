@@ -18,9 +18,8 @@
   "scripts": {
     "start": "cross-env PORT=8082 HOST=127.0.0.1 react-scripts start",
     "dev": "cross-env PORT=8082 react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run css-build && react-scripts build",
     "test": "cross-env PORT=8082 react-scripts test",
-    "eject": "react-scripts eject",
     "css-build": "node-sass --omit-source-map-url sass/mystyles.scss public/css/mystyles.css",
     "css-watch": "npm run css-build -- --watch"
   },
