@@ -8,6 +8,7 @@ export default function Home() {
                     data-cfasync="false"></script>
             <script src="/lib/to-top/material-scrolltop.js"></script>
             <script src="/js/scripts.js"></script>
+            <script src="/js/navbar.js"></script>
             <script src="https://accounts.google.com/gsi/client" async></script>
             <script>$('body').materialScrollTop();</script>
         </>
