@@ -43,7 +43,6 @@ export default function SigninButton(props: { signedIn: boolean }) {
     }
 
     if (!props.signedIn) {
-        console.log('User not signed in, rendering buttons...');
         return (
             <>
                 <div id="g_id_onload"
@@ -67,12 +66,12 @@ export default function SigninButton(props: { signedIn: boolean }) {
             </>
         );
     } else {
-        console.log('User signed in, not rendering buttons...');
+        return (
+            <>
+                <button className="button is-info is-light is-normal" onClick={handleClick}>Sign out</button>
+                <ToastContainer/>
+            </>
+        )
     }
-    return (
-        <>
-            <button className="button is-info is-light is-normal" onClick={handleClick}>Sign out</button>
-            <ToastContainer/>
-        </>
-    )
+
 }
