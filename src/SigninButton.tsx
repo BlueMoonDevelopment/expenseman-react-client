@@ -17,12 +17,15 @@ export default class SigninButton extends React.Component {
             }
         }).then(res => {
             const status = res.status;
+            console.log('status: ' + status);
             this.setState({hideButton: status !== 200});
+            console.log('hideButton: ' + this.state.hideButton);
         })
     }
 
     render() {
         if (!this.state.hideButton) {
+            console.log('Rendering buttons!');
             return (
                 <>
                     <div id="g_id_onload"
