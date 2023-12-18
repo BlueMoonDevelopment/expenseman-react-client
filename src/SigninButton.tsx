@@ -31,7 +31,7 @@ export default class SigninButton extends React.Component {
                          data-ux_mode="popup"
                          data-login_uri={(DEVELOPMENT_MODE ? "http://localhost:8082" : API_ENDPOINT_URL) + "/auth/google"}
                          data-auto_select="true"
-                         data-itp_support="true"
+                         data-auto_prompt="false"
                     >
                     </div>
                     <div className="g_id_signin"
