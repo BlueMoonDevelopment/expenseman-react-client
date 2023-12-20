@@ -16,7 +16,6 @@ export default function SigninButton(props: { signedIn: boolean }) {
                 document.body.removeChild(script);
             }
         }
-
     })
 
     function handleClick() {
