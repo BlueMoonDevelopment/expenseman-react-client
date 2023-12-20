@@ -4,8 +4,11 @@ import {API_ENDPOINT_URL, DEVELOPMENT_MODE, GOOGLE_OAUTH_CLIENT_ID} from "./conf
 import {getUrl} from "./tools/Tools";
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {useNavigate} from "react-router-dom";
 
 export default function SigninButton(props: { signedIn: boolean }) {
+    const nav = useNavigate();
+
     useEffect(() => {
         if (!props.signedIn) {
             const script = document.createElement('script');
@@ -26,9 +29,13 @@ export default function SigninButton(props: { signedIn: boolean }) {
             }
         }).then(res => {
             if (res.status === 200) {
-                toast.success("You have been signed out!", {
+                toast.success("You have been signed out! You will be redirected automatically...", {
                     position: toast.POSITION.TOP_CENTER
                 });
+                setTimeout(()=> {
+                    window.location.href='/';
+                },2000);
+
             } else if (res.status === 401) {
                 toast.warning("You are already signed out!", {
                     position: toast.POSITION.TOP_CENTER
@@ -49,8 +56,7 @@ export default function SigninButton(props: { signedIn: boolean }) {
                      data-context="signin"
                      data-ux_mode="popup"
                      data-login_uri={(DEVELOPMENT_MODE ? "http://localhost:8082" : API_ENDPOINT_URL) + "/auth/google"}
-                     data-auto_select="true"
-                     data-itp_support="true"
+                     data-auto_prompt="false"
                 >
                 </div>
                 <div className="g_id_signin"
