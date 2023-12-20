@@ -33,9 +33,13 @@ export default function Navbar(props: { signedIn: boolean }) {
                         <a className="navbar-item" href="/imprint">
                             <p>Imprint</p>
                         </a>
-                        <a className="navbar-item" href="https://github.com/BlueMoonDevelopment"
+                        <a className="navbar-item is-hidden-desktop" href="https://github.com/BlueMoonDevelopment"
                            target="_blank" rel="noreferrer">
-                            <p>GitHub</p>
+                            <p>BlueMoonDevelopment</p>
+                        </a>
+                        <a className="navbar-item is-hidden-desktop" href="https://github.com/BlueMoonDevelopment/expenseman-react-client"
+                           target="_blank" rel="noreferrer">
+                            <p>Source Code</p>
                         </a>
                         <a className="navbar-item" href="https://bluemoondev.org/discord" target="_blank"
                            rel="noreferrer">
