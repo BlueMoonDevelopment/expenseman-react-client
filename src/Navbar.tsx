@@ -21,12 +21,12 @@ export default function Navbar(props: { signedIn: boolean }) {
                         <img alt="Logo" src="/img/logo/transparent-bg/expenseman-logo-transparent-with-symbol.png"
                              sizes="124x124"/>
                     </a>
-                    <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                    <span role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false"
                        data-target="navbarMenu">
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
-                    </a>
+                    </span>
                 </div>
                 <div id="navbarMenu" className="navbar-menu">
                     <div className="navbar-start">

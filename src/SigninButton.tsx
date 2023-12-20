@@ -4,10 +4,8 @@ import {API_ENDPOINT_URL, DEVELOPMENT_MODE, GOOGLE_OAUTH_CLIENT_ID} from "./conf
 import {getUrl} from "./tools/Tools";
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {useNavigate} from "react-router-dom";
 
 export default function SigninButton(props: { signedIn: boolean }) {
-    const nav = useNavigate();
 
     useEffect(() => {
         if (!props.signedIn) {
