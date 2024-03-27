@@ -1,11 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import axios from "axios";
 import {API_ENDPOINT_URL, DEVELOPMENT_MODE, GOOGLE_OAUTH_CLIENT_ID} from "./configuration";
 import {getUrl} from "./tools/Tools";
-import {ToastContainer, toast, ToastItem} from 'react-toastify';
+import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function SigninButton(props: { signedIn: boolean }) {
+
     useEffect(() => {
         if (!props.signedIn) {
             const script = document.createElement('script');
@@ -16,7 +17,6 @@ export default function SigninButton(props: { signedIn: boolean }) {
                 document.body.removeChild(script);
             }
         }
-
     })
 
     function handleClick() {
@@ -27,9 +27,13 @@ export default function SigninButton(props: { signedIn: boolean }) {
             }
         }).then(res => {
             if (res.status === 200) {
-                toast.success("You have been signed out!", {
+                toast.success("You have been signed out! You will be redirected automatically...", {
                     position: toast.POSITION.TOP_CENTER
                 });
+                setTimeout(()=> {
+                    window.location.href='/';
+                },2000);
+
             } else if (res.status === 401) {
                 toast.warning("You are already signed out!", {
                     position: toast.POSITION.TOP_CENTER
@@ -43,7 +47,6 @@ export default function SigninButton(props: { signedIn: boolean }) {
     }
 
     if (!props.signedIn) {
-        console.log('User not signed in, rendering buttons...');
         return (
             <>
                 <div id="g_id_onload"
@@ -51,8 +54,7 @@ export default function SigninButton(props: { signedIn: boolean }) {
                      data-context="signin"
                      data-ux_mode="popup"
                      data-login_uri={(DEVELOPMENT_MODE ? "http://localhost:8082" : API_ENDPOINT_URL) + "/auth/google"}
-                     data-auto_select="true"
-                     data-itp_support="true"
+                     data-auto_prompt="false"
                 >
                 </div>
                 <div className="g_id_signin"
@@ -67,12 +69,12 @@ export default function SigninButton(props: { signedIn: boolean }) {
             </>
         );
     } else {
-        console.log('User signed in, not rendering buttons...');
+        return (
+            <>
+                <button className="button is-info is-light is-normal" onClick={handleClick}>Sign out</button>
+                <ToastContainer/>
+            </>
+        )
     }
-    return (
-        <>
-            <button className="button is-info is-light is-normal" onClick={handleClick}>Sign out</button>
-            <ToastContainer/>
-        </>
-    )
+
 }
