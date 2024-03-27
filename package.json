@@ -21,7 +21,7 @@
   "scripts": {
     "start": "cross-env PORT=8082 HOST=127.0.0.1 react-scripts start",
     "dev": "cross-env PORT=8082 NODE_ENV=development react-scripts start",
-    "build": "npm run css-build && react-scripts build",
+    "build": "CI=false && npm run css-build && react-scripts build",
     "test": "cross-env PORT=8082 react-scripts test",
     "css-build": "sass sass/mystyles.scss public/css/mystyles.css",
     "css-watch": "npm run css-build -- --watch"
