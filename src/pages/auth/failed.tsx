@@ -6,7 +6,7 @@ export default function Failed() {
 
     useEffect(()=>{
         setTimeout(()=> nav('/'),5000);
-    },[])
+    },[nav])
     return (
         <div className="container has-text-centered">
             <div className="notification is-danger">

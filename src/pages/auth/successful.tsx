@@ -6,7 +6,7 @@ export default function Successful() {
 
     useEffect(()=>{
         setTimeout(()=> nav('/'),5000);
-    },[])
+    },[nav])
 
     return (
         <div className="container has-text-centered">
