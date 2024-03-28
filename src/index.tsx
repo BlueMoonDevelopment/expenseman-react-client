@@ -7,6 +7,13 @@ import Failed from "./pages/auth/failed";
 import axios from "axios";
 import {getUrl} from "./tools/Tools";
 
+// material ui default font
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
+
 // Pages
 import Home from "./pages/Home";
 import NoPage from "./pages/NoPage";

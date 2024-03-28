@@ -2,6 +2,7 @@ import React from 'react';
 import axios from "axios";
 import {getUrl} from "../tools/Tools";
 import {toast, ToastContainer} from "react-toastify";
+import Button from "@mui/material/Button"
 
 export default function Account() {
 
@@ -40,7 +41,7 @@ export default function Account() {
     }
     return (
         <>
-            <button className="button is-info is-light is-normal" onClick={createAccount}>Create Account</button>
+            <Button variant="contained" onClick={createAccount}>Create Account</Button>
             <ToastContainer/>
         </>
     );
