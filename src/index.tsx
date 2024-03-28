@@ -2,13 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Layout from "./pages/Layout";
-import Home from "./pages/Home";
-import NoPage from "./pages/NoPage";
-import Imprint from "./pages/Imprint";
 import Successful from "./pages/auth/successful";
 import Failed from "./pages/auth/failed";
 import axios from "axios";
 import {getUrl} from "./tools/Tools";
+
+// Pages
+import Home from "./pages/Home";
+import NoPage from "./pages/NoPage";
+import Imprint from "./pages/Imprint";
+import Account from "./pages/Account";
 
 function getRouter(signedIn: boolean) {
     return createBrowserRouter([
@@ -23,6 +26,10 @@ function getRouter(signedIn: boolean) {
                 {
                     path: 'imprint',
                     element: <Imprint/>
+                },
+                {
+                    path: 'account',
+                    element: <Account/>
                 },
                 {
                     path: 'auth/success',
