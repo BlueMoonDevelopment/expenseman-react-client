@@ -8,23 +8,19 @@
     "@types/react": "^18.2.73",
     "@types/react-dom": "^18.2.22",
     "axios": "^1.6.8",
-    "bulma": "^0.9.4",
     "cross-env": "^7.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
     "react-scroll-to-top": "^3.0.0",
-    "react-toastify": "^9.1.3",
-    "sass": "^1.72.0"
+    "react-toastify": "^9.1.3"
   },
   "scripts": {
     "start": "cross-env PORT=8082 HOST=127.0.0.1 react-scripts start",
     "dev": "cross-env PORT=8082 NODE_ENV=development react-scripts start",
     "build": "CI=false && npm run css-build && react-scripts build",
-    "test": "cross-env PORT=8082 react-scripts test",
-    "css-build": "sass sass/mystyles.scss public/css/mystyles.css",
-    "css-watch": "npm run css-build -- --watch"
+    "test": "cross-env PORT=8082 react-scripts test"
   },
   "eslintConfig": {
     "extends": [
