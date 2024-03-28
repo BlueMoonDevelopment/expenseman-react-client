@@ -10,10 +10,11 @@ export default function Imprint() {
             <p>Hauptstraße 15a</p>
             <br/>
             <p>65597 Hünfelden </p>
+            <p>Germany</p>
             <h2>Contact Information</h2>
             <p>Telephone: +4915125281498 </p>
             <br/>
-            <p>E-Mail:<a href="mailto:joey.peter1998@gmail.com">joey.peter1998@gmail.com</a></p>
+            <p>E-Mail:<a href="mailto:contact@expenseman.app">contact@expenseman.app</a></p>
             <br/>
             <h2>Disclaimer </h2>
             <p>Accountability for content </p>
