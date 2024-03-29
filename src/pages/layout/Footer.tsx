@@ -25,7 +25,7 @@ function Copyright() {
 
 export default function Footer() {
     const styles: React.CSSProperties = {
-        backgroundColor: '#0e72b3',
+        backgroundColor: '#556cd6',
         color: 'white'
     }
     return (
