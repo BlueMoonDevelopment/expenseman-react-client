@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import Layout from "./pages/Layout";
+import Layout from "./pages/layout/Layout";
 import Successful from "./pages/auth/successful";
 import Failed from "./pages/auth/failed";
 import axios from "axios";
@@ -13,6 +13,10 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
+// Material UI
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import theme from './theme';
 
 // Pages
 import Home from "./pages/Home";
@@ -66,7 +70,10 @@ axios.get(getUrl('/auth/checksignedin'), {
     }
 }).then(res => {
     root.render(
-        <RouterProvider router={getRouter(res.status === 200)}/>
+        <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <RouterProvider router={getRouter(res.status === 200)}/>
+        </ThemeProvider>
     );
 });
 
