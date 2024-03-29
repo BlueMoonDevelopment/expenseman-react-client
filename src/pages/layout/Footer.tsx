@@ -8,6 +8,7 @@ import {ReactComponent as MySVG} from "../../icons/top-arrow.svg";
 import {CssBaseline} from '@mui/material';
 import Button from "@mui/material/Button";
 import GitHubIcon from '@mui/icons-material/GitHub';
+import theme from '../../theme';
 
 
 function Copyright() {
@@ -25,7 +26,7 @@ function Copyright() {
 
 export default function Footer() {
     const styles: React.CSSProperties = {
-        backgroundColor: '#556cd6',
+        backgroundColor: theme.palette.primary.main,
         color: 'white'
     }
     return (
